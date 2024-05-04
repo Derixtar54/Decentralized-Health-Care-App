@@ -1,7 +1,4 @@
 pragma solidity >=0.4.22 <0.7.0;
-
- 
- 
 contract Doctor {
    
      
@@ -22,7 +19,7 @@ contract Doctor {
           owner = 0xE6005Cc724c2d44F0aF23d663017a7E375DD7F35; //Address of Hospital
       }
       
-     // modifier to give access only to hospital
+   
        modifier isOwner() {
 
          require(msg.sender == owner, "Access is not allowed");
@@ -31,13 +28,7 @@ contract Doctor {
 
      }
      
-     
-     
-     
-     
-     
-     
-   function store_doctor_details(uint16 doctor_id,string memory _doctor_name,string memory _doctor_specialisation,uint256 _doctor_ph_no,string memory _doctor_address)public isOwner {
+function store_doctor_details(uint16 doctor_id,string memory _doctor_name,string memory _doctor_specialisation,uint256 _doctor_ph_no,string memory _doctor_address)public isOwner {
     
          d.doctor_name = _doctor_name;
          d.doctor_specialisation = _doctor_specialisation;
@@ -49,10 +40,7 @@ contract Doctor {
         
         
    }
-         
-          
-    
-         function retreive_doctor_details(uint16 doctor_id) public view returns (string memory,string memory,uint256,string memory){
+      function retreive_doctor_details(uint16 doctor_id) public view returns (string memory,string memory,uint256,string memory){
              
      doctor memory d = doctorlist[doctor_id];
      
